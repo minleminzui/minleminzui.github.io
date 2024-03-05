@@ -253,7 +253,7 @@
 <p><img alt="" src="image.png" /></p>
 <p><strong>Communication Layer</strong>中，包含几个重要的组件: </p>
 <ul class="arabic simple">
-<li><p><strong><a class="reference external" href="https: //en.wikipedia.org/wiki/Large_language_model">LLM</a></strong>: 用于跟外界（其他agent等）进行沟通，同时也会给自己的Tool Agent分配任务（这个LLM可以和Tool Agent的LLM不一样，比如我们可以用基于GPT-3.5的OpenAI Assistant作为Tool Agent，但用GPT-4作为Communication Layer的LLM）</p></li>
+<li><p><strong><a class="reference external" href="https://en.wikipedia.org/wiki/Large_language_model">LLM</a></strong>: 用于跟外界（其他agent等）进行沟通，同时也会给自己的Tool Agent分配任务（这个LLM可以和Tool Agent的LLM不一样，比如我们可以用基于GPT-3.5的OpenAI Assistant作为Tool Agent，但用GPT-4作为Communication Layer的LLM）</p></li>
 <li><p><strong>Conversation Memory</strong>: 存储了Communicative Agent与其他Agent的沟通记录，包括任务的目标、聊天过程、结果等。因为我们希望Agent不是一个启动一次就结束的程序，而是一个可以持续的实体，所以Conversation Memory应该是一个数据库(截止至2024.2.3写文档时还未完全支持)，存储了历史所有任务的所有聊天记录。</p></li>
 <li><p><strong>Agent Notebook</strong> (代码里应该叫agent_contact): 存储了之前所有与该agent合作过的agent信息，以及从之前合作过程中得出的对其他agent的评价，方便以后该agent找队友时进行参考。(截止至2024.2.3写文档时还未完全支持)</p></li>
 <li><p><strong>Tool Agent</strong>:  就是不同的agent，可以是OpenAI Assistant、ReAct agent、Open Interpreter等第三方agent，他们只负责去完成Communication Layer里的LLM给他们分配的任务，不会参与到实际的与其他agent交互的过程中。</p></li>
