@@ -1,31 +1,15 @@
-
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="zh" data-content_root="../">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark">
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYVB1ZVE6J"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            
-            gtag('config', 'G-BYVB1ZVE6J');
-            
-        </script>
-    <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="How to read these docs" href="reading.html" /><link rel="prev" title="Welcome to LlamaIndex 🦙 !" href="../index.html" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="AgentVerse-IM 安装" href="set_server.html" /><link rel="prev" title="创建docker-compose" href="../customize/docker-compose.html" />
 
-    <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
-        <title>Configuration</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/autodoc_pydantic.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/algolia.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+        <title>创建docker-compose - AgentVerse-IM 文档</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
     
     
 
@@ -50,7 +34,7 @@
       }
     }
   }
-</style><script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="llamaindex-llamaindex" /><meta name="readthedocs-version-slug" content="stable" /></head>
+</style></head>
   <body>
     
     <script>
@@ -139,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">MetaAgentVerse Tutorial</div></a>
+      <a href="../index.html"><div class="brand">AgentVerse-IM  文档</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -162,43 +146,47 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">MetaAgentVerse Tutorial</span>
+  <span class="sidebar-brand-text">AgentVerse-IM  文档</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="搜索" name="q" aria-label="搜索">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
-
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-    <p class="caption" role="heading"><span class="caption-text">开始使用</span></p>
   <ul>
-    <li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">MetaAgentVerse安装</a></li>
-  <!-- <li class="toctree-l1"><a class="reference internal" href="getting_started/core.html">MetaAgentVerse核心思想</a></li>
-  <li class="toctree-l1"><a class="reference internal" href="getting_started/structure.html">MetaAgentVerse代码结构</a></li> -->
-  
-  <p class="caption" role="heading"><span class="caption-text">运行 Cases</span></p>
-  <ul>
-  <li class="toctree-l1"><a class="reference internal" href="../case/IOA.html">IOA Paper Writing</a></li>
-  <li class="toctree-l1"><a class="reference internal" href="../case/IOT_1.html">IOT Party</a></li>
-  <li class="toctree-l1"><a class="reference internal" href="../case/IOT_2.html">IOT Daily Life</a></li>
-  
-  <p class="caption" role="heading"><span class="caption-text">自定义Agent</span></p>
-  <ul>
-  <li class="toctree-l1"><a class="reference internal" href="../customize/agent.html">Agent</a></li>
-  <li class="toctree-l1"><a class="reference internal" href="../customize/tool.html">Tool</a></li>
-  <li class="toctree-l1"><a class="reference internal" href="../customize/goal.html">Goal</a></li>
-  <li class="toctree-l1"><a class="reference internal" href="../customize/docker-compose.html">docker-compose</a></li>
-  
-  <p class="caption" role="heading"><span class="caption-text">分布式服务简单配置</span></p>
-  <ul>
-  <li class="toctree-l1"><a class="reference internal" href="#">配置文件</a></li>
-  <li class="toctree-l1"><a class="reference internal" href="../distributed_service/set_server.html">部署MetaAgentVerse服务</a></li>
-  <li class="toctree-l1"><a class="reference internal" href="../distributed_service/run_case.html">本地运行Case</a></li>
-  <!-- <li class="toctree-l1 has-children"><a class="reference internal" href="use_cases/q_and_a/root.html">IOA Paper Writing</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul> -->
-  <!-- <li class="toctree-l2"><a class="reference internal" href="use_cases/q_and_a/rag_cli.html">IOT Party</a></li> -->
-  </ul>
-  </li>
+<li class="toctree-l1"><a class="reference internal" href="../home.html">欢迎来到 AgentVerse-IM 🪐!</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">HIGH-LEVEL 概念</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../high_level_concepts/framework.html">框架理念</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../high_level_concepts/mechanism.html">沟通机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../high_level_concepts/code_structure.html">代码结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../high_level_concepts/customize_tool_agent.html">自定义Tool Agent</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">开始使用</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">AgentVerse-IM 安装</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">运行 CASES</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../case/IOA.html">IOA Paper Writing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../case/IOT_1.html">IOT Party</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../case/IOT_2.html">IOT Daily Life</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">自定义AGENT</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../customize/agent.html">IOA Paper Writing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../customize/tool.html">创建Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../customize/goal.html">创建Goal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../customize/docker-compose.html">创建docker-compose</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">分布式服务简单配置</span></p>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">创建docker-compose</a></li>
+<li class="toctree-l1"><a class="reference internal" href="set_server.html">AgentVerse-IM 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run_case.html">本地运行Case</a></li>
+</ul>
 
 </div>
 </div>
@@ -232,74 +220,66 @@
           </label>
         </div>
         <article role="main">
-          <div class="section" id="config">
-<h2>配置文件<a class="headerlink" href="#config_file" title="Permalink to this heading">#</a></h2>
-<p>设置服务器的7788，54321的TCP&UDP端口为开启状态。</p>
-<p>为了确保分布式服务可执行，需要更改<code class="docutils literal notranslate">agentverse/config/cases</code>和<code class="docutils literal notranslate">dockerfiles/compose</code>中配置文件中的部分参数。</p>
-
-<div class="section" id="agent_config">
-<h3>Agent Configuration<a class="headerlink" href="#agent_config" title="Permalink to this heading">#</a></h3>
-<p>为了正确访问服务器，需要将Agent中server部分中的<strong>host</strong>和<strong>hostname</strong>更改成服务器的IP地址，以及确保端口设置开启成功。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">server: </span> 
-    <span class="kn">host:</span> <span class="s2">http://your_server_IP_address (ex. http://43.163.230.180)</span>
-    <span class="kn">port:</span> <span class="s2">7788 (setting up 7788 port in your server)</span>
-    <span class="kn">hostname:</span> <span class="s2">your_server_IP_address (ex. 43.163.230.180)</span>
+          <section id="docker-compose">
+<h1>创建docker-compose<a class="headerlink" href="#docker-compose" title="Link to this heading">#</a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>设置服务器的7788，54321的TCP&amp;UDP端口为开启状态。</p>
+<p>为了确保分布式服务可执行，需要更改agentverse/config/cases和dockerfiles/compose中配置文件中的部分参数。</p>
+<section id="agent-configuration">
+<h2>Agent Configuration<a class="headerlink" href="#agent-configuration" title="Link to this heading">#</a></h2>
+<p>为了正确访问服务器，需要将Agent中server部分中的 <strong>host</strong> 和 <strong>hostname</strong> 更改成服务器的IP地址，以及确保端口设置开启成功。</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">server</span><span class="p">:</span>
+<span class="w">   </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://your_server_IP_address (ex. http://43.163.230.180)</span>
+<span class="w">   </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7788 (setting up 7788 port in your server)</span>
+<span class="w">   </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">your_server_IP_address (ex. 43.163.230.180)</span>
 </pre></div>
 </div>
+</section>
+<section id="id1">
+<h2>Agent Configuration<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>为了正确访问服务器，需要将Agent中server部分中的 <strong>host</strong> 和 <strong>hostname</strong> 更改成服务器的IP地址，以及确保端口设置开启成功。</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3&quot;</span>
 
-<div class="section" id="docker-compose_config">
-    <h3>Docker Compose Configuration<a class="headerlink" href="#docker-compose_config" title="Permalink to this heading">#</a></h3>
-    <p>为了正确访问服务器，需要将docker-compose中<strong>depends_on</strong>字段中有关server的参数删除。在此部分选择将depand_on字段全部删除，如果有需要自行更改。</p>
-    <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">version</span><span class="n">:</span> <span class="s2">"3"</span>
-    
-    <span class="kn">service</span><span class="o">:</span>
-        <span class="kn">Name</span><span class="o">:</span> <span class="s2">(ex. Cater)
-            <span class="kn">image</span><span class="o">:</span><sapn class="s2">your_needed_image(ex. metaagentverse-agent:latest)</sapn>
-            <span class="kn">build</span><span class="o">:</span>
-                <span class="kn">context</span><span class="o">:</span> <sapn class="s2">../../</sapn>
-                <span class="kn">dockerfile</span><span class="o">:</span> <sapn class="s2">your_docker_file(ex. dockerfiles/agent.Dockerfile)</sapn>
-                <span class="kn">args</span><span class="o">:</span> <sapn class="s2">(如果已连接外网，则不需要此参数)</sapn>
-                    <span class="kn">http_proxy</span><span class="o">:</span> <sapn class="s2">http://172.27.16.1:7890 </sapn>
-                    <span class="kn">https_proxy</span><span class="o">:</span> <sapn class="s2">http://172.27.16.1:7890</sapn>
-            <span class="kn">container_name</span><span class="o">:</span> <sapn class="s2">your_container_name</sapn>
-            <span class="kn">env_file</span><span class="o">:</span>
-                <span class="o">-</span> <span class="s2">.env</span>
-            <span class="kn">volumes</span><span class="o">:</span>
-                <span class="o">-</span> <span class="s2">/var/run/docker.sock:/var/run/docker.sock</span>
-            <span class="kn">volumes</span><span class="o">:</span>
-                <span class="o">-</span> <span class="s2">OPENAI_API_KEY</span>
-                <span class="o">-</span> <span class="s2">OPENAI_BASE_URL(如果不需要此参数，请删除)</span>
-                <span class="o">-</span> <span class="s2">CUSTOM_CONFIG=your_agent.yaml path(ex. agentverse/config/cases/IOT/Caterer.yaml)</span>
-            <span class="kn">ports</span><span class="o">:</span>
-                <span class="o">-</span> <span class="s2">your_host_port:your_container_port(ex. 5051:5050)</span>
-            <span class="kn">stdin_open</span><span class="o">:</span> <span class="kn">true</span>
-            <span class="kn">tty</span><span class="o">:</span> <span class="kn">true</span>
-    
-            
-    
-    
-    </pre></div>
-    </div>
-
-
-
-
-
-
+<span class="w">   </span><span class="nt">service</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(ex. Cater)</span>
+<span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">image:your_needed_image(ex. AgentVerse-IM-agent:latest)</span>
+<span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+<span class="w">            </span><span class="nt">context</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">../../</span>
+<span class="w">            </span><span class="nt">dockerfile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">your_docker_file(ex. dockerfiles/agent.Dockerfile)</span>
+<span class="w">      </span><span class="w w-Error">   </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(如果已连接外网，则不需要此参数)</span>
+<span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">http_proxy</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://172.27.16.1:7890</span>
+<span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">https_proxy</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://172.27.16.1:7890</span>
+<span class="w">         </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">your_container_name</span>
+<span class="w">         </span><span class="nt">env_file</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.env</span>
+<span class="w">         </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/run/docker.sock:/var/run/docker.sock</span>
+<span class="w">         </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OPENAI_API_KEY</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OPENAI_BASE_URL(如果不需要此参数，请删除)</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CUSTOM_CONFIG=your_agent.yaml path(ex. agentverse/config/cases/IOT/Caterer.yaml)</span>
+<span class="w">         </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">your_host_port:your_container_port(ex. 5051:5050)</span>
+<span class="w">         </span><span class="nt">stdin_open</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">         </span><span class="nt">tty</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
 </div>
-</div>
+</section>
+</section>
 
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../distributed_service/set_server.html">
+          <a class="next-page" href="set_server.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">部署MetaAgentVerse服务</div>
+                <div class="title">AgentVerse-IM 安装</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -310,7 +290,7 @@
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">docker-compose</div>
+                <div class="title">创建docker-compose</div>
                 
               </div>
             </a>
@@ -318,7 +298,7 @@
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2024, Team MetaAgentVerse
+                Copyright &#169; 2024, Team AgentVerse-IM
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
@@ -344,16 +324,9 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Configuration</a><ul>
-<li><a class="reference internal" href="#agent_config">Agent Configuration</a></li>
-<li><a class="reference internal" href="#docker-compose_config">Docker Compose Configuration</a></li>
-
-
-
-</ul>
-</li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">创建docker-compose</a><ul>
+<li><a class="reference internal" href="#agent-configuration">Agent Configuration</a></li>
+<li><a class="reference internal" href="#id1">Agent Configuration</a></li>
 </ul>
 </li>
 </ul>
@@ -365,16 +338,9 @@
       
     </aside>
   </div>
-</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/scripts/furo.js"></script>
-    <script src="../_static/js/mendablesearch.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.3.3/dist/umd/index.js"></script>
-    <script defer="defer" src="../_static/js/algolia.js"></script>
-    <script defer="defer" src="../_static/js/leadfeeder.js"></script>
+</div><script src="../_static/documentation_options.js?v=2ccfc426"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
     </body>
 </html>

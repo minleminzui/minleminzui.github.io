@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="本地运行Case" href="run_case.html" /><link rel="prev" title="创建docker-compose" href="config.html" />
+<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="AgentVerse-IM 安装" href="../getting_started/installation.html" /><link rel="prev" title="代码结构" href="code_structure.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
-        <title>AgentVerse-IM 安装 - AgentVerse-IM 文档</title>
+        <title>自定义Tool Agent - AgentVerse-IM 文档</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -158,11 +158,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../home.html">欢迎来到 AgentVerse-IM 🪐!</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">HIGH-LEVEL 概念</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../high_level_concepts/framework.html">框架理念</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../high_level_concepts/mechanism.html">沟通机制</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../high_level_concepts/code_structure.html">代码结构</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../high_level_concepts/customize_tool_agent.html">自定义Tool Agent</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="framework.html">框架理念</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mechanism.html">沟通机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_structure.html">代码结构</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">自定义Tool Agent</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">开始使用</span></p>
 <ul>
@@ -182,10 +182,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../customize/docker-compose.html">创建docker-compose</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">分布式服务简单配置</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="config.html">创建docker-compose</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">AgentVerse-IM 安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="run_case.html">本地运行Case</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../distributed_service/config.html">创建docker-compose</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributed_service/set_server.html">AgentVerse-IM 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributed_service/run_case.html">本地运行Case</a></li>
 </ul>
 
 </div>
@@ -214,59 +214,115 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="agentverse-im">
-<h1>AgentVerse-IM 安装<a class="headerlink" href="#agentverse-im" title="Link to this heading">#</a></h1>
+          <section id="tool-agent">
+<h1>自定义Tool Agent<a class="headerlink" href="#tool-agent" title="Link to this heading">#</a></h1>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
+<p>以下是接入第三方Agent的简要指南。如果想要接入一个第三方仓库中的agent，那么我们主要需要考虑两件事：</p>
+<blockquote>
+<div><ul>
+<li><p>为第三方agent构建一个docker，并通过FastAPI或其他网络框架向外暴露run接口。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>run(task_desc)：从头开始执行task_desc任务，并返回执行结果字符串。</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>写一个adapter，将第三方agent和AgentVerse连接起来。其实主要就是进行一些数据格式的转换，比如AgentVerse中的memory信息都使用common/types/llm.pycommon/types/llm.py中的LLMResult来存储，那么adapter的作用就是把这个转换为第三方agent接受的格式，并调用第一步中得到的docker提供的接口。adapter将作为AgentVerse中与第三方agent交互的中间层。</p></li>
+</ul>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="openinterpreter-example">
+<h2>Openinterpreter Example<a class="headerlink" href="#openinterpreter-example" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>为Open Interpreter构建一个http服务</strong>。首先，在 <code class="code docutils literal notranslate"><span class="pre">im_client/agents/open_interpreter</span></code> 目录中创建的open_interpreter_agent.py会被docker化，在这其中写好了一些FastAPI的post的endpoint，在使用uvicorn启动的时候会暴露作为http服务。之后使用docker启动的时候，这些endpoint可以被外界请求。</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p><strong>为Open Interpreter创建Docker</strong>。之后，我们需要创建一个Dockerfile文件，位于 <code class="code docutils literal notranslate"><span class="pre">dockerfiles/tool_agents</span></code> 中。这样我们可以将Open Interpreter这样的tool agent使用docker进行启动，以避免与AgentVerse可能的环境冲突。</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p><strong>为Open Interpreter构建Adapter</strong>。在 <code class="code docutils literal notranslate"><span class="pre">im_client/agents/open_interpreter</span></code> 中创建的open_interpreter_agent_adapter.py是一个Open Interpreter的adapter。他去构建AgentVerse和Open Interpreter数据格式上的转换，并且把要求转发到Open Interpreter的docker容器。Adapter中同样提供了run，里面进行数据格式的转换，并通过post请求去调用Open Interpreter docker的对应endpoint。</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="docker">
+<h2>Docker 启动<a class="headerlink" href="#docker" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>在 <code class="code docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> 中的一个agent配置中设置好其tool agent对应的配置文件环境变量CUSTOM_CONFIG，同时在 <code class="code docutils literal notranslate"><span class="pre">CUSTOM_CONFIG</span></code> 指定的文件中定义tool agent相关的参数。</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>在终端中build你之前写的Dockerfile，例如 <code class="code docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span> <span class="pre">-f</span> <span class="pre">dockerfiles/tool_agents/open_interpreter.Dockerfile</span> <span class="pre">-t</span> <span class="pre">open_interpreter:latest</span> <span class="pre">.</span></code> 。然后运行 <code class="code docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">up</span> <span class="pre">--build</span></code> 启动服务器以及多个communication agent。</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id1">
+<h2>逻辑<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>目前分为三个阶段，分别是:</p>
 <ol class="arabic">
-<li><p>首先进入服务器</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">username</span><span class="nd">@ip_address</span>
-</pre></div>
-</div>
-</li>
-<li><p>创建一个文件夹，将AgentVerse-IM clone到文件中，</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">data</span>
-<span class="n">mkdir</span> <span class="n">your_file_name</span>
-<span class="n">cd</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">your_file_name</span>
-<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">AgentVerse</span><span class="o">/</span><span class="n">AgentVerse</span><span class="o">-</span><span class="n">IM</span><span class="o">.</span><span class="n">git</span>
-</pre></div>
-</div>
-</li>
-</ol>
+<li><p><strong>Team Up</strong> 阶段。在这个阶段，communication layer中的llm会接收到用户的goal，并根据agent_contact决定：</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<ol class="arabic" start="3">
-<li><p>拉取IOT case中IOT Server所需要用到的image，</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">mlmz</span><span class="o">/</span><span class="n">iot</span><span class="p">:</span><span class="n">latest</span>
-</pre></div>
-</div>
-</li>
-</ol>
+<ul class="simple">
+<li><p>如果有合适的agent，就会向服务器发送组队请求，然后等待服务器返回的群聊id。</p></li>
+</ul>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<ol class="arabic" start="4">
-<li><p>在 <code class="code docutils literal notranslate"><span class="pre">dockerfiles/compose</span></code> 目录下的 <code class="code docutils literal notranslate"><span class="pre">server.yml</span></code> 包含了AgentVerse-IM Server和IOT Server。通过docker-compose命令在服务端启动。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="o">-</span><span class="n">f</span> <span class="n">dockerfiles</span><span class="o">/</span><span class="n">composeserver</span><span class="o">.</span><span class="n">yml</span> <span class="n">up</span> <span class="o">--</span><span class="n">build</span>
-</pre></div>
-</div>
-</li>
-</ol>
+<ul class="simple">
+<li><p>如果没有合适的agent，就会向服务器发送agent查找，给出自己认为可以合作的agent的特征，然后等待服务器返回查找到的相关agent列表。并最后发送组队请求。</p></li>
+</ul>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">小技巧</p>
-<p>如果需要想要部署其他server，可自行修改server.yml。</p>
+</li>
+<li><p><strong>Coordination</strong> 阶段。在这个阶段，communication agent可以向刚刚创建的群聊中发送消息，同时指定下一个说话的人。在这个阶段，有两个protocol（待定）：</p>
+<div class="line-block">
+<div class="line"><br /></div>
 </div>
+<ul class="simple">
+<li><p><strong>discussion protocol</strong> ：用于讨论任务的细节，包括任务的目标、任务的细节、任务的分工等。</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p><strong>vote protocol</strong> ：当有一个agent提出自己关于接下来的计划，需要指明使用该protocol，一旦指明，则进入投票阶段，其他agent将对agent的提议进行投票，投票结果决定是否采纳该提议。所有人同意，则进入下一个阶段；否则，返回discussion。</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Execution</strong> 阶段。在这个阶段，communication agent按照刚刚讨论的方案，给自己的tool agent分配任务。同时，随机时间内查看tool agent的memory，判断是否有足够的信息需要与其他agent进行同步，并将消息发送至群聊中。</p></li>
+</ol>
+</section>
 </section>
 
         </article>
@@ -274,23 +330,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="run_case.html">
+          <a class="next-page" href="../getting_started/installation.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">本地运行Case</div>
+                <div class="title">AgentVerse-IM 安装</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="config.html">
+          <a class="prev-page" href="code_structure.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">创建docker-compose</div>
+                <div class="title">代码结构</div>
                 
               </div>
             </a>
@@ -312,8 +368,29 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">自定义Tool Agent</a><ul>
+<li><a class="reference internal" href="#openinterpreter-example">Openinterpreter Example</a></li>
+<li><a class="reference internal" href="#docker">Docker 启动</a></li>
+<li><a class="reference internal" href="#id1">逻辑</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

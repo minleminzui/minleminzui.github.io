@@ -1,0 +1,45 @@
+#######################
+IOT Daily Life
+#######################
+
+|
+
+IOT Daily: 在IOT Daily场景中，有5个agent组队进行沟通协作应对传感器发生的变化，这五个agent分别是SensorChecker, CatererAssistant, EntertainmentAssistant, EnvironmentAssistant, DrinkerAssistant, 其中CatererAssistant, EntertainmentAssistant, EnvironmentAssistant, DrinkerAssistant 是四个基于ReAct agent的communication layer去使用不同的智能体以完成对于传感器变化的应对。以下是如何启动并使用。
+
+Docker 运行
+===========================
+* 首先创建ReAct Agent镜像，其中http_proxy是optional，是为了在构建docker容器时使用你的本机代理，因为有一些需要翻墙下载的包。如果你的电脑上用的不是clash，需要把7890端口换成你代理软件的端口。如果你已经在外网，把这个参数删掉。
+
+   ::
+
+      docker build -f dockerfiles/tool_agents/react.Dockerfile --build-arg http_proxy=http://host.docker.internal:7890 --build-arg https_proxy=http://host.docker.internal:7890 -t react:latest . 
+
+|
+
+* 然后通过docker-compose创建并运行7个container，其中包含server，iot- server，五个参与群聊的agent，以及catering_react_agent，drink_react_agent，entertainment_react_agent，environment_react_agent。
+
+   ::
+
+      docker-compose -f dockerfiles/compose/IOT_Party.yml up --build
+
+|
+
+* 启动之后，SensorChecker会去轮询地检查所有的传感器是否有检测到变化，对于这个目前的仿真情况，在启动IOT-Server的同一台机器上，可以使用如下Python脚本完成人为的传感器值的修改。
+
+   .. code-block:: python
+
+      from miio import DeviceFactory 
+      from typing import Dict 
+
+      # 此处创建一个客户端
+      dev = DeviceFactory.create("127.0.0.0.1", "00000000000000000000000000000000")
+      # 此处修改temperature-humidity-sensor的温度为0
+      dev.send( 
+         command="temperature-humidity-sensor.set_properties",
+         parameters=[{"did": "..", "siid": 2, "piid": 1,  "value": 0}],
+      )
+      # 此处修改temperature-humidity-sensor的温度为0
+      dev.send( 
+         command="illumination-sensor.set_properties",
+         parameters=[{"did": "..", "siid": 2, "piid": 1,  "value": 0}],
+      ) 

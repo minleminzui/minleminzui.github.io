@@ -1,56 +1,40 @@
-
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="zh" data-content_root="./">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark">
-        <script async src="https: //www.googletagmanager.com/gtag/js?id=G-BYVB1ZVE6J"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            
-            gtag('config', 'G-BYVB1ZVE6J');
-            
-        </script>
-    <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="MetaAgentVerse安装" href="getting_started/installation.html" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="索引" href="genindex.html" /><link rel="search" title="搜索" href="search.html" /><link rel="next" title="欢迎来到 AgentVerse-IM 🪐!" href="home.html" />
 
-    <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
-        <title>MetaAgentVerse 文档</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/autodoc_pydantic.css" />
-    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
-    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
-    <link rel="stylesheet" type="text/css" href="_static/css/algolia.css" />
-    <link rel="stylesheet" type="text/css" href="https: //cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+        <title>AgentVerse-IM 文档</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     
     
 
 
 <style>
   body {
-    --color-code-background:  #f8f8f8;
-  --color-code-foreground:  black;
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
   
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background:  #202020;
-  --color-code-foreground:  #d0d0d0;
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
   
     }
-    /* @media (prefers-color-scheme:  dark) {
-      body: not([data-theme="light"]) {
-        --color-code-background:  #202020;
-  --color-code-foreground:  #d0d0d0;
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
   
       }
-    } */
+    }
   }
-</style><script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="llamaindex-llamaindex" /><meta name="readthedocs-version-slug" content="stable" /></head>
+</style></head>
   <body>
     
     <script>
@@ -58,7 +42,7 @@
     </script>
     
 
-<svg xmlns="http: //www.w3.org/2000/svg" style="display:  none;">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
     <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
@@ -67,7 +51,7 @@
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http: //www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -76,14 +60,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http: //www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http: //www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -98,7 +82,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http: //www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -106,7 +90,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http: //www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -139,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">MetaAgentVerse Tutorial</div></a>
+      <a href="#"><div class="brand">AgentVerse-IM  文档</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -162,44 +146,47 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
   
   
-  <span class="sidebar-brand-text">MetaAgentVerse Tutorial</span>
+  <span class="sidebar-brand-text">AgentVerse-IM  文档</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
-  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="搜索" name="q" aria-label="搜索">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">开始使用</span></p>
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="home.html">欢迎来到 AgentVerse-IM 🪐!</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">HIGH-LEVEL 概念</span></p>
 <ul>
-  <li class="toctree-l1"><a class="reference internal" href="getting_started/installation.html">MetaAgentVerse安装</a></li>
-<!-- <li class="toctree-l1"><a class="reference internal" href="getting_started/core.html">MetaAgentVerse核心思想</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started/structure.html">MetaAgentVerse代码结构</a></li> -->
-
-<p class="caption" role="heading"><span class="caption-text">运行 Cases</span></p>
+<li class="toctree-l1"><a class="reference internal" href="high_level_concepts/framework.html">框架理念</a></li>
+<li class="toctree-l1"><a class="reference internal" href="high_level_concepts/mechanism.html">沟通机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="high_level_concepts/code_structure.html">代码结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="high_level_concepts/customize_tool_agent.html">自定义Tool Agent</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">开始使用</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/installation.html">AgentVerse-IM 安装</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">运行 CASES</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="case/IOA.html">IOA Paper Writing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="case/IOT_1.html">IOT Party</a></li>
 <li class="toctree-l1"><a class="reference internal" href="case/IOT_2.html">IOT Daily Life</a></li>
-
-<p class="caption" role="heading"><span class="caption-text">自定义Agent</span></p>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">自定义AGENT</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="customize/agent.html">Agent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="customize/tool.html">Tool</a></li>
-<li class="toctree-l1"><a class="reference internal" href="customize/goal.html">Goal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="customize/docker-compose.html">docker-compose</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="customize/agent.html">IOA Paper Writing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="customize/tool.html">创建Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="customize/goal.html">创建Goal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="customize/docker-compose.html">创建docker-compose</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">分布式服务简单配置</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="distributed_service/config.html">配置文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="distributed_service/set_server.html">部署MetaAgentVerse服务</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributed_service/config.html">创建docker-compose</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributed_service/set_server.html">AgentVerse-IM 安装</a></li>
 <li class="toctree-l1"><a class="reference internal" href="distributed_service/run_case.html">本地运行Case</a></li>
-<!-- <li class="toctree-l1 has-children"><a class="reference internal" href="use_cases/q_and_a/root.html">IOA Paper Writing</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul> -->
-<!-- <li class="toctree-l2"><a class="reference internal" href="use_cases/q_and_a/rag_cli.html">IOT Party</a></li> -->
 </ul>
-</li>
-
-
 
 </div>
 </div>
@@ -212,7 +199,7 @@
     <div class="content">
       <div class="article-container">
         <a href="#" class="back-to-top muted-link">
-          <svg xmlns="http: //www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
           </svg>
           <span>Back to top</span>
@@ -233,119 +220,138 @@
           </label>
         </div>
         <article role="main">
-          <div class="section" id="welcome-to-MetaAgentVerse">
-<h2>欢迎来到 MetaAgentVerse 🪐!<a class="headerlink" href="#welcome-to-MetaAgentVerse" title="Permalink to this heading">#</a></h2>
-<p>MetaAgentVerse是一个多agent协作的框架，核心思想在于定义通用的协议，使得不同的agent在实现一个adapter之后，都能够接入该框架中，并在该框架中进行沟通协作。框架核心特点为: 
-  <ul class="arabic simple">
-    
-    <li><p>分布式: 允许不同agent运行于不同设备上，通过网络进行交互。目前我们通过docker在单台机器上模拟这一环境，但理论上未来可以直接部署到不同设备上。</p></li>
-    
-    <li><p>异步执行: 允许不同agent在执行任务的过程中继续交互，而不是一味等待其他agent的执行结果。这一特点使得agent的任务执行效率更高，同时也更加灵活。</p></li>
-  </ul>
-  </p>
-<!-- <div class="admonition tip"> -->
-<!-- <p class="admonition-title">Tip</p>
-<p>Updating to LlamaIndex v0.10.0? Check out the <a class="reference external" href="./getting_started/v0_10_0_migration.html">migration guide</a>.</p>
-</div> -->
-<div class="section" id="structure">
-<h3>🚀 为什么会设计这个框架<a class="headerlink" href="#structure" title="Permalink to this heading">#</a></h3>
-<p>目前大部分的agent在设计之初并不考虑multi-agent合作的情况，我们将现有的agent称为Tool Agent，因为他们更像是作为一个智能的tool完成某一个给定的任务。为了使这些不同的Tool Agent可以进行沟通，我们定义了一个Communication Layer将Tool Agent包裹起来，并将这整个看作一个<strong>Communicative Agent</strong> <code class="docutils literal notranslate">agentverse/communication/communication_layer.py</code>，结构大体如下: </p>
-<p><img alt="" src="image.png" /></p>
-<p><strong>Communication Layer</strong>中，包含几个重要的组件: </p>
-<ul class="arabic simple">
-<li><p><strong><a class="reference external" href="https://en.wikipedia.org/wiki/Large_language_model">LLM</a></strong>: 用于跟外界（其他agent等）进行沟通，同时也会给自己的Tool Agent分配任务（这个LLM可以和Tool Agent的LLM不一样，比如我们可以用基于GPT-3.5的OpenAI Assistant作为Tool Agent，但用GPT-4作为Communication Layer的LLM）</p></li>
-<li><p><strong>Conversation Memory</strong>: 存储了Communicative Agent与其他Agent的沟通记录，包括任务的目标、聊天过程、结果等。因为我们希望Agent不是一个启动一次就结束的程序，而是一个可以持续的实体，所以Conversation Memory应该是一个数据库(截止至2024.2.3写文档时还未完全支持)，存储了历史所有任务的所有聊天记录。</p></li>
-<li><p><strong>Agent Notebook</strong> (代码里应该叫agent_contact): 存储了之前所有与该agent合作过的agent信息，以及从之前合作过程中得出的对其他agent的评价，方便以后该agent找队友时进行参考。(截止至2024.2.3写文档时还未完全支持)</p></li>
-<li><p><strong>Tool Agent</strong>:  就是不同的agent，可以是OpenAI Assistant、ReAct agent、Open Interpreter等第三方agent，他们只负责去完成Communication Layer里的LLM给他们分配的任务，不会参与到实际的与其他agent交互的过程中。</p></li>
-</ul>
-
-
-<p>为了使不同的Communicative Agent可以协同完成任务，我们需要一个中心服务器，这个服务器的功能包括: </p>
-<ul class="arabic simple">
-<li><p><strong>Agent Registry</strong>: 记录了所有接入MetaAgentVerse的agent的信息，包括agent的描述，agent的能力等。所有agent在启动的时候都应该以规定方式向这个服务器注册自己。同时支持根据agent的特征进行查找并返回合适的agent。</p></li>
-<li><p><strong>Session Manager</strong>: 记录了所有正在进行的任务的信息，包括任务的目标、任务的参与者、任务的状态等。有点像是微信里的一个群聊，只不过这个群聊是由不同的agent组成的。接收到一个agent发送了消息到某个群里的话，就会自动把消息转发给这个群里其他agent。</p></li>
-</ul>
-</ul>
+          <section id="agentverse-im">
+<h1>欢迎来到 AgentVerse-IM 🪐!<a class="headerlink" href="#agentverse-im" title="Link to this heading">#</a></h1>
+<p>AgentVerse-IM是一个多agent协作的框架，核心思想在于定义通用的协议，使得不同的agent在实现一个adapter之后，都能够接入该框架中，并在该框架中进行沟通协作。框架核心特点为:</p>
+<div class="line-block">
+<div class="line"><br /></div>
 </div>
-
-
-<div class="section" id="design">
-<h3>🤖 如何设计机制？<a class="headerlink" href="#design" title="Permalink to this heading">#</a></h3>
-<p>为了使不同agent可以协同完成任务，我们将完成任务的过程分为两阶段: </p>
-<ul class="arabic simple">
-<li><p><strong>Team Up</strong>: 在这一阶段，Communication Layer的LLM会接收到一个goal（例如是外界用户传入的goal），然后根据Agent Notebook中的信息，决定: </p></li>
-<ul class="arabic simple">
-  <li><p>如果之前合作过的agent中有合适的agent，就会向服务器发送组队请求，然后等待服务器返回的群聊id</p></li>
-  <li><p>如果没有合适的agent，就会向服务器发送agent查找，给出自己认为可以合作的agent的特征，然后等待服务器返回查找到的相关agent列表。并最后发送组队请求</p></li>
+<ul class="simple">
+<li><p>🤖 Agent即时通讯软件：该框架是一款创新的即时通讯应用，专为不同的Agent设计，允许它们通过一个远程服务器在统一的架构中相互发现、交流和协作。这一框架不仅促进了“好友”之间的沟通，还能有效地解决各类任务，无论是信息交换、数据同步还是协作处理复杂问题，都能在这一平台上得到便捷高效的实现。</p></li>
 </ul>
-<li><p><strong>Coordination</strong>: 在这一阶段，Communication Layer可以向刚刚创建的群聊中发送消息。接下来这个群就负责完成这个goal了。</p></li>
-</ul>
-
-
-<p>Coordination是最复杂的阶段。为了使得agent之间可以比较高效地进行沟通，我们实现了一些机制:
-</p>
-<ul class="arabic simple">
-  <li><p><strong>沟通顺序</strong>: 为了可控性，每个时刻我们只允许一个agent说话，在它说完之后，自己决定下一个说话的agent。</p></li>
-  <li><p><strong>消息类型</strong>: 我们定义了不同的消息类型供agent自行选择，包括:</p></li>
-  <ul class="arabic simple">
-    <li><p><strong>DISCUSSION</strong>: 正常的讨论信息</p></li>
-    <li><p><strong>SYNC_TASK_ASSIGNMENT</strong>: 同步任务分配，在这一消息中，agent会向其他agent分配任务，讨论将等到任务完成后，得到结果反馈才会继续。</p></li>
-    <li><p><strong>ASYNC_TASK_ASSIGNMENT</strong>: 异步任务分配，在这一消息中，agent会向其他agent分配任务，同时讨论继续，不会阻塞。被指派任务的agent会去执行，并在执行完成后立刻把结果发到群里。</p></li>
-    <li><p><strong>INFORM_TASK_RESULT</strong>: 任务执行结果的反馈</p></li>
-    <li><p><strong>INFORM_TASK_PROGRESS</strong>: 被分配到异步任务后，发送一条消息确认收到任务。</p></li>
-    <li><p><strong>PAUSE</strong>: agent决定暂停讨论，直到某个之前异步分配出去的任务完成再继续。</p></li>
-    <li><p><strong>CONCLUDE_GROUP_DISCUSSION</strong>: 讨论结束，任务完成。</p></li>
-  </ul>
-
-  
-</ul>
-</ul>
+<div class="line-block">
+<div class="line"><br /></div>
 </div>
-
-
-<div class="section" id="code_structure">
-<h3>💻 代码结构<a class="headerlink" href="#code_structure" title="Permalink to this heading">#</a></h3>
-<ul class="arabic simple">
-  <li><p><code class="docutils literal notranslate">agentverse/agents</code>: 存放不同tool agent的接入代码，目前支持ReAct Agent <code class="docutils literal notranslate">agentverse/agents/react</code>、OpenAI Assistant <code class="docutils literal notranslate">agentverse/agents/openai_assistant</code>、Open Interpreter <code class="docutils literal notranslate">agentverse/agents/open_interpreter</code>。对于如何新接入一个agent，可见<a class="reference internal" href="customize/agent.html">自定义Tool Agent</a>的描述。</p></li>
-
-  <li><p><code class="docutils literal notranslate">agentverse/communication</code>: Communication Layer的具体实现。 <code class="docutils literal notranslate">communication_layer.py</code>、实现了主要逻辑， <code class="docutils literal notranslate">main.py</code>是启动入口，<code class="docutils literal notranslate">task_management.py</code>。维护当前群聊中所有正在进行/已完成的任务状态（会作为prompt里的内容给到agent里）。</p></li>
-
-  <li><p><code class="docutils literal notranslate">agentverse/server</code>: 中心服务器的实现，包括agent registry、session manager等。</p></li>
-
-  <li><p><code class="docutils literal notranslate">agentverse/config</code>: 存储了一些agent的config文件，在docker-compose进行整个系统启动时，会读取docker-compose配置中指定的config，之后会提到。另外，这个文件夹的tools文件夹里存着一些描述tool的yaml。</p></li>
-
-  <li><p><code class="docutils literal notranslate">agentverse/tools</code>: 包含一些工具的具体实现，他们的描述被存在上面说的这个<code class="docutils literal notranslate">agentverse/config/tools</code>里。</p></li>
-
-  <li><p><code class="docutils literal notranslate">agentverse/llms</code>: 目前只实现了openai的接口，也就是communicative agent的LLM暂时只支持openai模型。</p></li>
-
-  <li><p><code class="docutils literal notranslate">agentverse/memory</code>: 目前基本还是只用的最简单的列表memory，就是把所有消息原封不动地存下来。</p></li>
-
-  <li><p><code class="docutils literal notranslate">agentverse/prompts</code>: 存储几乎框架中所有用到的prompt</p></li>
-
-  <li><p><code class="docutils literal notranslate">agentverse/types</code>: 框架中用到的一些数据类型，用pydantic来进行类型标注，比如任务的描述、任务的状态等</p></li>
-  <li><p><code class="docutils literal notranslate">dockerfiles</code>: 存放了所有的dockerfile，用于构建agent的docker镜像和启动整个系统的docker-compose</p></li>
+<ul class="simple">
+<li><p>💡 即插即用的Agent兼容性：已经成功接入市面上多种不同的Agent，包括AutoGPT, OpenInterpreter, OpenAI Assistant, ReAct Agent等，展现了其出色的兼容性和扩展性。这意味着加入新的Agent或tool变得非常简单</p></li>
 </ul>
-<p>其他没提到的文件/文件夹详情可见<strong><a class="reference external" href="https://github.com/OpenBMB/AgentVerse">AgentVerse</a></strong>。</p>
+<div class="line-block">
+<div class="line"><br /></div>
 </div>
-
-<!-- </ul> -->
+<ul class="simple">
+<li><p>🌍 分布式架构: 采用分布式架构，允许不同的Agent运行于不同的设备上，并通过网络进行互动和协作。目前，通过在单台机器上使用Docker模拟这一环境，从而可以直接部署到不同的设备上。</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>⏳ 异步执行能力: 拥有异步执行的能力，允许不同的Agent在执行任务的过程中继续进行交互，而不必一味地等待其他Agent的执行结果。这种设计不仅提高了任务的执行效率，而且增加了处理过程的灵活性。Agent可以在等待必要信息的同时继续执行其他任务，这种非阻塞的工作模式使得整个系统的反应速度更快，处理能力更强，进一步优化了Agent之间的协同工作流程。</p></li>
+</ul>
 <div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="home.html">欢迎来到 AgentVerse-IM 🪐!</a></li>
+</ul>
 </div>
 <div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">HIGH-LEVEL 概念</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="high_level_concepts/framework.html">框架理念</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="high_level_concepts/framework.html#id2">🚀 为什么会设计这个框架</a></li>
+<li class="toctree-l2"><a class="reference internal" href="high_level_concepts/framework.html#client">Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="high_level_concepts/framework.html#server">Server</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="high_level_concepts/mechanism.html">沟通机制</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="high_level_concepts/mechanism.html#id2">🤖 沟通机制设计？</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="high_level_concepts/code_structure.html">代码结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="high_level_concepts/customize_tool_agent.html">自定义Tool Agent</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="high_level_concepts/customize_tool_agent.html#openinterpreter-example">Openinterpreter Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="high_level_concepts/customize_tool_agent.html#docker">Docker 启动</a></li>
+<li class="toctree-l2"><a class="reference internal" href="high_level_concepts/customize_tool_agent.html#id1">逻辑</a></li>
+</ul>
+</li>
+</ul>
 </div>
-
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">开始使用</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/installation.html">AgentVerse-IM 安装</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/installation.html#id1">手动安装（推荐 ！）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/installation.html#server">Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/installation.html#client">Client</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">运行 CASES</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="case/IOA.html">IOA Paper Writing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="case/IOA.html#docker">Docker 运行</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="case/IOT_1.html">IOT Party</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="case/IOT_1.html#docker">Docker 运行</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="case/IOT_2.html">IOT Daily Life</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="case/IOT_2.html#docker">Docker 运行</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">自定义AGENT</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="customize/agent.html">IOA Paper Writing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="customize/agent.html#server">Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customize/agent.html#tool-agent">Tool Agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customize/agent.html#comm">Comm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customize/agent.html#llm">LLM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="customize/tool.html">创建Tool</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="customize/tool.html#tool-with-required-parameters">Tool with required parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customize/tool.html#tool-without-required-parameters">Tool without required parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="customize/goal.html">创建Goal</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="customize/goal.html#id1">Goal</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="customize/docker-compose.html">创建docker-compose</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="customize/docker-compose.html#id1">Docker Compose</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">分布式服务简单配置</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="distributed_service/config.html">创建docker-compose</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="distributed_service/config.html#agent-configuration">Agent Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="distributed_service/config.html#id1">Agent Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="distributed_service/set_server.html">AgentVerse-IM 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributed_service/run_case.html">本地运行Case</a></li>
+</ul>
+</div>
+</section>
 
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="getting_started/installation.html">
+          <a class="next-page" href="home.html">
               <div class="page-info">
                 <div class="context">
-                  <span>下一页</span>
+                  <span>Next</span>
                 </div>
-                <div class="title">MetaAgentVerse安装</div>
+                <div class="title">欢迎来到 AgentVerse-IM 🪐!</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -354,11 +360,11 @@
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2024, Team MetaAgentVerse
+                Copyright &#169; 2024, Team AgentVerse-IM
             </div>
-            Made with <a href="https: //www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https: //pradyunsg.me">@pradyunsg</a>'s
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
-            <a href="https: //github.com/pradyunsg/furo">Furo</a>
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
             
           </div>
           <div class="right-details">
@@ -380,15 +386,7 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">欢迎来到 MetaAgentVerse 🪐!</a><ul>
-<li><a class="reference internal" href="#structure">🚀 为什么会设计这个框架</a></li>
-<li><a class="reference internal" href="#design">🤖 如何设计机制？</a></li>
-<li><a class="reference internal" href="#code_structure"> 💻 代码结构</a></li>
-
-</ul>
-</li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">欢迎来到 AgentVerse-IM 🪐!</a><ul>
 </ul>
 </li>
 </ul>
@@ -400,16 +398,9 @@
       
     </aside>
   </div>
-</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/scripts/furo.js"></script>
-    <script src="_static/js/mendablesearch.js"></script>
-    <script defer="defer" src="https: //cdn.jsdelivr.net/npm/@docsearch/js@3.3.3/dist/umd/index.js"></script>
-    <script defer="defer" src="_static/js/algolia.js"></script>
-    <script defer="defer" src="_static/js/leadfeeder.js"></script>
+</div><script src="_static/documentation_options.js?v=2ccfc426"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
     </body>
 </html>

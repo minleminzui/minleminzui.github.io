@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="本地运行Case" href="run_case.html" /><link rel="prev" title="创建docker-compose" href="config.html" />
+<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="代码结构" href="code_structure.html" /><link rel="prev" title="框架理念" href="framework.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
-        <title>AgentVerse-IM 安装 - AgentVerse-IM 文档</title>
+        <title>沟通机制 - AgentVerse-IM 文档</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -158,11 +158,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../home.html">欢迎来到 AgentVerse-IM 🪐!</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">HIGH-LEVEL 概念</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../high_level_concepts/framework.html">框架理念</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../high_level_concepts/mechanism.html">沟通机制</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../high_level_concepts/code_structure.html">代码结构</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../high_level_concepts/customize_tool_agent.html">自定义Tool Agent</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="framework.html">框架理念</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">沟通机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_structure.html">代码结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="customize_tool_agent.html">自定义Tool Agent</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">开始使用</span></p>
 <ul>
@@ -182,10 +182,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../customize/docker-compose.html">创建docker-compose</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">分布式服务简单配置</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="config.html">创建docker-compose</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">AgentVerse-IM 安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="run_case.html">本地运行Case</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../distributed_service/config.html">创建docker-compose</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributed_service/set_server.html">AgentVerse-IM 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributed_service/run_case.html">本地运行Case</a></li>
 </ul>
 
 </div>
@@ -214,59 +214,117 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="agentverse-im">
-<h1>AgentVerse-IM 安装<a class="headerlink" href="#agentverse-im" title="Link to this heading">#</a></h1>
+          <section id="id1">
+<h1>沟通机制<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<ol class="arabic">
-<li><p>首先进入服务器</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">username</span><span class="nd">@ip_address</span>
-</pre></div>
-</div>
-</li>
-<li><p>创建一个文件夹，将AgentVerse-IM clone到文件中，</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">data</span>
-<span class="n">mkdir</span> <span class="n">your_file_name</span>
-<span class="n">cd</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">your_file_name</span>
-<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">AgentVerse</span><span class="o">/</span><span class="n">AgentVerse</span><span class="o">-</span><span class="n">IM</span><span class="o">.</span><span class="n">git</span>
-</pre></div>
-</div>
-</li>
-</ol>
+<section id="id2">
+<h2>🤖 沟通机制设计？<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>为了使不同agent可以协同完成任务，我们将完成任务的过程分为两阶段:</p>
+<ul>
+<li><dl>
+<dt><strong>Team Up</strong><span class="classifier">在这一阶段，Communication Layer的LLM会接收到一个goal（例如是外界用户传入的goal），然后根据Agent Notebook中的信息，决定:</span></dt><dd><ul class="simple">
+<li><p>如果之前合作过的agent中有合适的agent，就会向服务器发送组队请求，然后等待服务器返回的群聊id。</p></li>
+</ul>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<ol class="arabic" start="3">
-<li><p>拉取IOT case中IOT Server所需要用到的image，</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">mlmz</span><span class="o">/</span><span class="n">iot</span><span class="p">:</span><span class="n">latest</span>
-</pre></div>
-</div>
-</li>
-</ol>
+<ul class="simple">
+<li><p>如果没有合适的agent，就会向服务器发送agent查找，给出自己认为可以合作的agent的特征，然后等待服务器返回查找到的相关agent列表。并最后发送组队请求。</p></li>
+</ul>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<ol class="arabic" start="4">
-<li><p>在 <code class="code docutils literal notranslate"><span class="pre">dockerfiles/compose</span></code> 目录下的 <code class="code docutils literal notranslate"><span class="pre">server.yml</span></code> 包含了AgentVerse-IM Server和IOT Server。通过docker-compose命令在服务端启动。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="o">-</span><span class="n">f</span> <span class="n">dockerfiles</span><span class="o">/</span><span class="n">composeserver</span><span class="o">.</span><span class="n">yml</span> <span class="n">up</span> <span class="o">--</span><span class="n">build</span>
-</pre></div>
-</div>
+</dd>
+</dl>
 </li>
-</ol>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>🌟 Nested Team up：在任务讨论阶段，每个agent在接收并评估被分配的任务时，现在可以选择：</p>
+<ul class="simple">
+<li><p>独自完成任务，即被分配的任务直接由Tool Agent完成。</p></li>
+<li><p>组队完成任务：如果评估结果表明需要与其他agent组队来完成该任务，agent会将该任务作为一个新的goal，并启动新的Team Up过程以组成子团队。这一过程可以根据需要进行嵌套，直至达到设定的嵌套组队深度限制。 系统允许设置每个agent的嵌套组队功能的开关，以及嵌套组队的深度，以提供更灵活的配置。</p></li>
+</ul>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">小技巧</p>
-<p>如果需要想要部署其他server，可自行修改server.yml。</p>
+<p>我们期望Nested Team Up为我们的Multi-Agent System统带来了前所未有的灵活性与扩展能力。此功能允许Agent根据需要自行决定是否组建新的子团队，以解决更具体的子任务。通过这种嵌套式的团队组建机制，我们的系统能够轻松scale up，处理更为复杂的任务，同时确保高效和灵活的资源分配。</p>
+<div class="line-block">
+<div class="line"><br /></div>
 </div>
+<p>为什么要有这个机制？因为在Multi-Agent System中，Agent的数量和交互复杂度往往随着任务的规模成指数增长。Nested team up通过创建清晰的层级和角色分工，允许每个小团队集中处理其专长的任务，减少不必要的交互，这样即便团队规模增加，每个小团队内的沟通复杂度仍然保持在可控范围内。</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>这种机制为什么能够scale up？因为它提供了一种模块化的扩展方法。当系统需要扩展时，可以简单地增加新的代理小组或在现有小组内增加代理，每个新加入的代理只需与其直接关联的小组沟通，而不是整个系统，这极大降低了系统整体的沟通负担。通过这种多层嵌套，LLM-based Multi-Agent System能够高效地扩展以处理更大规模的任务，同时仍然保持每个小团队的高效性。</p>
+</div>
+<ul class="simple">
+<li><p><strong>Coordination</strong>: 在这一阶段，Communication Layer可以向刚刚创建的群聊中发送消息。接下来这个群就负责完成这个goal了。</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Coordination是最复杂的阶段。为了使得agent之间可以比较高效地进行沟通，我们实现了一些机制:</p>
+<ul class="simple">
+<li><p><strong>沟通顺序</strong> : 为了可控性，每个时刻我们只允许一个agent说话，在它说完之后，自己决定下一个说话的agent。</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul>
+<li><p><strong>消息类型</strong> : 我们定义了不同的消息类型供agent自行选择，包括:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>DISCUSSION</strong> : 正常的讨论信息。</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p><strong>SYNC_TASK_ASSIGNMENT</strong> : 同步任务分配，在这一消息中，agent会向其他agent分配任务，讨论将等到任务完成后，得到结果反馈才会继续。</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p><strong>ASYNC_TASK_ASSIGNMENT</strong> : 异步任务分配，在这一消息中，agent会向其他agent分配任务，同时讨论继续，不会阻塞。被指派任务的agent会去执行，并在执行完成后立刻把结果发到群里。</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p><strong>INFORM_TASK_RESULT</strong> : 任务执行结果的反馈。</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p><strong>INFORM_TASK_PROGRESS</strong> : 被分配到异步任务后，发送一条消息确认收到任务。</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p><strong>PAUSE</strong> : agent决定暂停讨论，直到某个之前异步分配出去的任务完成再继续。</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p><strong>CONCLUDE_GROUP_DISCUSSION</strong> : 讨论结束，任务完成。</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
 </section>
 
         </article>
@@ -274,23 +332,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="run_case.html">
+          <a class="next-page" href="code_structure.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">本地运行Case</div>
+                <div class="title">代码结构</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="config.html">
+          <a class="prev-page" href="framework.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">创建docker-compose</div>
+                <div class="title">框架理念</div>
                 
               </div>
             </a>
@@ -312,8 +370,27 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">沟通机制</a><ul>
+<li><a class="reference internal" href="#id2">🤖 沟通机制设计？</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

@@ -1,0 +1,43 @@
+########################
+AgentVerse-IM 安装
+########################
+
+|
+
+
+1. 首先进入服务器
+   ::
+
+      ssh username@ip_address
+
+
+
+2. 创建一个文件夹，将AgentVerse-IM clone到文件中，
+
+   ::
+      
+      cd /data 
+      mkdir your_file_name
+      cd /data/your_file_name
+      git clone https://github.com/AgentVerse/AgentVerse-IM.git
+
+|
+
+3. 拉取IOT case中IOT Server所需要用到的image，
+
+   ::
+
+      docker pull mlmz/iot:latest
+
+|
+
+4. 在 :code:`dockerfiles/compose` 目录下的 :code:`server.yml` 包含了AgentVerse-IM Server和IOT Server。通过docker-compose命令在服务端启动。
+   ::
+
+      docker-compose -f dockerfiles/composeserver.yml up --build
+
+|
+
+.. tip::
+
+   如果需要想要部署其他server，可自行修改server.yml。

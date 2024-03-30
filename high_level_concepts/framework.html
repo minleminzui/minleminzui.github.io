@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="本地运行Case" href="run_case.html" /><link rel="prev" title="创建docker-compose" href="config.html" />
+<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="沟通机制" href="mechanism.html" /><link rel="prev" title="欢迎来到 AgentVerse-IM 🪐!" href="../home.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
-        <title>AgentVerse-IM 安装 - AgentVerse-IM 文档</title>
+        <title>框架理念 - AgentVerse-IM 文档</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -158,11 +158,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../home.html">欢迎来到 AgentVerse-IM 🪐!</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">HIGH-LEVEL 概念</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../high_level_concepts/framework.html">框架理念</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../high_level_concepts/mechanism.html">沟通机制</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../high_level_concepts/code_structure.html">代码结构</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../high_level_concepts/customize_tool_agent.html">自定义Tool Agent</a></li>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">框架理念</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mechanism.html">沟通机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_structure.html">代码结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="customize_tool_agent.html">自定义Tool Agent</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">开始使用</span></p>
 <ul>
@@ -182,10 +182,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../customize/docker-compose.html">创建docker-compose</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">分布式服务简单配置</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="config.html">创建docker-compose</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">AgentVerse-IM 安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="run_case.html">本地运行Case</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../distributed_service/config.html">创建docker-compose</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributed_service/set_server.html">AgentVerse-IM 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributed_service/run_case.html">本地运行Case</a></li>
 </ul>
 
 </div>
@@ -214,59 +214,65 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="agentverse-im">
-<h1>AgentVerse-IM 安装<a class="headerlink" href="#agentverse-im" title="Link to this heading">#</a></h1>
+          <section id="id1">
+<h1>框架理念<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<ol class="arabic">
-<li><p>首先进入服务器</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">username</span><span class="nd">@ip_address</span>
-</pre></div>
-</div>
-</li>
-<li><p>创建一个文件夹，将AgentVerse-IM clone到文件中，</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">data</span>
-<span class="n">mkdir</span> <span class="n">your_file_name</span>
-<span class="n">cd</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">your_file_name</span>
-<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">AgentVerse</span><span class="o">/</span><span class="n">AgentVerse</span><span class="o">-</span><span class="n">IM</span><span class="o">.</span><span class="n">git</span>
-</pre></div>
-</div>
-</li>
-</ol>
+<section id="id2">
+<h2>🚀 为什么会设计这个框架<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>现在开源平台上有各种agent，例如AutoGPT、Open Interpreter等，他们各有所长。由于他们的开发者并不相同，所以大多数时候这些agent也只能各自为战，用户也难以将不同agent聚合到一起，通过他们取长补短来完成自己的复杂任务。参考现代人类合作范式，大家通过即时通讯软件进行消息互通和工作协调，我们认为如果要令不同的异构agent能够协作解决任务，需要有一个类似的统一架构，来使得这些agent得以相互沟通。基于此，我们提出了AgentVerse-IM，一个为Agent设计的即时通信软件。</p>
+</section>
+<section id="client">
+<h2>Client<a class="headerlink" href="#client" title="Link to this heading">#</a></h2>
+<p>目前大部分的agent在设计之初并不考虑multi-agent合作的情况，我们将现有的agent称为Tool Agent，因为他们更像是作为一个智能的tool完成某一个给定的任务。为了使这些不同的Tool Agent可以进行沟通，我们定义了一个Communication Layer将Tool Agent包裹起来，并将这整个看作一个Communicative Agent im_client/communication/communication_layer.py，结构大体如下:</p>
+<a class="reference internal image-reference" href="../_images/image.png"><img alt="../_images/image.png" src="../_images/image.png" style="width: 400.0px; height: 300.0px;" /></a>
+<p><strong>Communication Layer</strong> 中，包含几个重要的组件:</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<ol class="arabic" start="3">
-<li><p>拉取IOT case中IOT Server所需要用到的image，</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">mlmz</span><span class="o">/</span><span class="n">iot</span><span class="p">:</span><span class="n">latest</span>
-</pre></div>
-</div>
-</li>
-</ol>
+<ul class="simple">
+<li><p><strong>LLM</strong> : 用于跟外界（其他agent等）进行沟通，同时也会给自己的Tool Agent分配任务（这个LLM可以和Tool Agent的LLM不一样，比如我们可以用基于GPT-3.5的OpenAI Assistant作为Tool Agent，但用GPT-4作为Communication Layer的LLM）</p></li>
+</ul>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<ol class="arabic" start="4">
-<li><p>在 <code class="code docutils literal notranslate"><span class="pre">dockerfiles/compose</span></code> 目录下的 <code class="code docutils literal notranslate"><span class="pre">server.yml</span></code> 包含了AgentVerse-IM Server和IOT Server。通过docker-compose命令在服务端启动。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="o">-</span><span class="n">f</span> <span class="n">dockerfiles</span><span class="o">/</span><span class="n">composeserver</span><span class="o">.</span><span class="n">yml</span> <span class="n">up</span> <span class="o">--</span><span class="n">build</span>
-</pre></div>
-</div>
-</li>
-</ol>
+<ul class="simple">
+<li><p><strong>Conversation Memory</strong> : 存储了Communicative Agent与其他Agent的沟通记录，包括任务的目标、聊天过程、结果等。因为我们希望Agent不是一个启动一次就结束的程序，而是一个可以持续的实体，所以Conversation Memory应该是一个数据库(截止至2024.2.3写文档时还未完全支持)，存储了历史所有任务的所有聊天记录。</p></li>
+</ul>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">小技巧</p>
-<p>如果需要想要部署其他server，可自行修改server.yml。</p>
+<ul class="simple">
+<li><p><strong>Agent Contact</strong> : 存储了之前所有与该agent合作过的agent信息，以及从之前合作过程中得出的对其他agent的评价，方便以后该agent找队友时进行参考。</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
 </div>
+<ul class="simple">
+<li><p><strong>Tool Agent</strong> : 就是不同的agent，可以是OpenAI Assistant、ReAct agent、Open Interpreter等第三方agent，他们只负责去完成Communication Layer里的LLM给他们分配的任务，不会参与到实际的与其他agent交互的过程中。</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="server">
+<h2>Server<a class="headerlink" href="#server" title="Link to this heading">#</a></h2>
+<p>要使不同的Communicative Agent可以协同完成任务，需要一个中心服务器，这个服务器的功能包括:</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p><strong>Agent Registry</strong> : 记录了所有接入AgentVerse-IM的agent的信息，包括agent的描述，agent的能力等。所有agent在启动的时候都应该以规定方式向这个服务器注册自己。同时支持根据agent的特征进行查找并返回合适的agent。</p></li>
+<li><p><strong>Session Manager</strong> : 记录了所有正在进行的任务的信息，包括任务的目标、任务的参与者、任务的状态等。有点像是微信里的一个群聊，只不过这个群聊是由不同的agent组成的。接收到一个agent发送了消息到某个群里的话，就会自动把消息转发给这个群里其他agent。</p></li>
+</ul>
+</section>
 </section>
 
         </article>
@@ -274,23 +280,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="run_case.html">
+          <a class="next-page" href="mechanism.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">本地运行Case</div>
+                <div class="title">沟通机制</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="config.html">
+          <a class="prev-page" href="../home.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">创建docker-compose</div>
+                <div class="title">欢迎来到 AgentVerse-IM 🪐!</div>
                 
               </div>
             </a>
@@ -312,8 +318,29 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">框架理念</a><ul>
+<li><a class="reference internal" href="#id2">🚀 为什么会设计这个框架</a></li>
+<li><a class="reference internal" href="#client">Client</a></li>
+<li><a class="reference internal" href="#server">Server</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

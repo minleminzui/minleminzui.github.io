@@ -1,31 +1,15 @@
-
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="zh" data-content_root="../">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark">
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYVB1ZVE6J"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            
-            gtag('config', 'G-BYVB1ZVE6J');
-            
-        </script>
-    <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="How to read these docs" href="reading.html" /><link rel="prev" title="Welcome to LlamaIndex 🦙 !" href="../index.html" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="创建Tool" href="tool.html" /><link rel="prev" title="IOT Daily Life" href="../case/IOT_2.html" />
 
-    <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
-        <title>Customize Agent</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/autodoc_pydantic.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/algolia.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+        <title>IOA Paper Writing - AgentVerse-IM 文档</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
     
     
 
@@ -50,7 +34,7 @@
       }
     }
   }
-</style><script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="llamaindex-llamaindex" /><meta name="readthedocs-version-slug" content="stable" /></head>
+</style></head>
   <body>
     
     <script>
@@ -139,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">MetaAgentVerse Tutorial</div></a>
+      <a href="../index.html"><div class="brand">AgentVerse-IM  文档</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -162,43 +146,47 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">MetaAgentVerse Tutorial</span>
+  <span class="sidebar-brand-text">AgentVerse-IM  文档</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="搜索" name="q" aria-label="搜索">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
-
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-    <p class="caption" role="heading"><span class="caption-text">开始使用</span></p>
   <ul>
-    <li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">MetaAgentVerse安装</a></li>
-  <!-- <li class="toctree-l1"><a class="reference internal" href="getting_started/core.html">MetaAgentVerse核心思想</a></li>
-  <li class="toctree-l1"><a class="reference internal" href="getting_started/structure.html">MetaAgentVerse代码结构</a></li> -->
-  
-  <p class="caption" role="heading"><span class="caption-text">运行 Cases</span></p>
-  <ul>
-  <li class="toctree-l1"><a class="reference internal" href="../case/IOA.html">IOA Paper Writing</a></li>
-  <li class="toctree-l1"><a class="reference internal" href="../case/IOT_1.html">IOT Party</a></li>
-  <li class="toctree-l1"><a class="reference internal" href="../case/IOT_2.html">IOT Daily Life</a></li>
-  
-  <p class="caption" role="heading"><span class="caption-text">自定义Agent</span></p>
-  <ul>
-  <li class="toctree-l1"><a class="reference internal" href="#">Agent</a></li>
-  <li class="toctree-l1"><a class="reference internal" href="../customize/tool.html">Tool</a></li>
-  <li class="toctree-l1"><a class="reference internal" href="../customize/goal.html">Goal</a></li>
-  <li class="toctree-l1"><a class="reference internal" href="../customize/docker-compose.html">docker-compose</a></li>
-  
-  <p class="caption" role="heading"><span class="caption-text">分布式服务简单配置</span></p>
-  <ul>
-  <li class="toctree-l1"><a class="reference internal" href="../distributed_service/config.html">配置文件</a></li>
-  <li class="toctree-l1"><a class="reference internal" href="../distributed_service/set_server.html">部署MetaAgentVerse服务</a></li>
-  <li class="toctree-l1"><a class="reference internal" href="../distributed_service/run_case.html">本地运行Case</a></li>
-  <!-- <li class="toctree-l1 has-children"><a class="reference internal" href="use_cases/q_and_a/root.html">IOA Paper Writing</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul> -->
-  <!-- <li class="toctree-l2"><a class="reference internal" href="use_cases/q_and_a/rag_cli.html">IOT Party</a></li> -->
-  </ul>
-  </li>
+<li class="toctree-l1"><a class="reference internal" href="../home.html">欢迎来到 AgentVerse-IM 🪐!</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">HIGH-LEVEL 概念</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../high_level_concepts/framework.html">框架理念</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../high_level_concepts/mechanism.html">沟通机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../high_level_concepts/code_structure.html">代码结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../high_level_concepts/customize_tool_agent.html">自定义Tool Agent</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">开始使用</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">AgentVerse-IM 安装</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">运行 CASES</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../case/IOA.html">IOA Paper Writing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../case/IOT_1.html">IOT Party</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../case/IOT_2.html">IOT Daily Life</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">自定义AGENT</span></p>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">IOA Paper Writing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tool.html">创建Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="goal.html">创建Goal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker-compose.html">创建docker-compose</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">分布式服务简单配置</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../distributed_service/config.html">创建docker-compose</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributed_service/set_server.html">AgentVerse-IM 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributed_service/run_case.html">本地运行Case</a></li>
+</ul>
 
 </div>
 </div>
@@ -232,70 +220,78 @@
           </label>
         </div>
         <article role="main">
-          <div class="section" id="agent">
-<h2>创建Agent<a class="headerlink" href="#customize_agent" title="Permalink to this heading">#</a></h2>
-<p>在<code class="docutils literal notranslate">agentverse/config/cases</code>目录下的cases中创建<code class="docutils literal notranslate">your_case_name</code>的文件夹。比如: <code class="docutils literal notranslate">agentverse/config/cases/IOT</code></p>
-<p>创建<code class="docutils literal notranslate">your_agent_name.yaml</code>作为agent的配置文件，依据你所需要的agent数量，创建相应数量的yaml文件数量。比如: <code class="docutils literal notranslate">agentverse/config/cases/IOT/Caterer.yaml</code></p>
-<p><code class="docutils literal notranslate">your_agent_name.yaml</code>分为4个部分<strong>server, tool_agent, comm, llm</strong>。</p>
-
-<div class="section" id="server">
-<h3>Server<a class="headerlink" href="#server" title="Permalink to this heading">#</a></h3>
+          <section id="ioa-paper-writing">
+<h1>IOA Paper Writing<a class="headerlink" href="#ioa-paper-writing" title="Link to this heading">#</a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>在 <code class="code docutils literal notranslate"><span class="pre">im_client/config/cases</span></code> 目录下的cases中创建your_case_name的文件夹。比如: <code class="code docutils literal notranslate"><span class="pre">im_client/config/cases/IOT</span></code></p>
+<p>创建 <code class="code docutils literal notranslate"><span class="pre">your_agent_name.yaml</span></code> 作为agent的配置文件，依据你所需要的agent数量，创建相应数量的yaml文件数量。比如: <code class="code docutils literal notranslate"><span class="pre">im_client/config/cases/IOT/Caterer.yaml</span></code></p>
+<p><code class="code docutils literal notranslate"><span class="pre">your_agent_name.yaml</span></code> 分为4个部分 <strong>server</strong> , <strong>tool_agent</strong>, <strong>comm</strong>, <strong>llm</strong>。</p>
+<section id="server">
+<h2>Server<a class="headerlink" href="#server" title="Link to this heading">#</a></h2>
 <p>server: 所有配置均为以下IP Address和Port。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">server: </span> 
-    <span class="kn">host:</span> <span class="s2">http://your_server_IP_address (ex. http://metaagentverse-server)</span>
-    <span class="kn">port:</span> <span class="s2">7788 (setting 7788 port in your server)</span>
-    <span class="kn">hostname:</span> <span class="s2">your_server_IP_address (ex. metaagentverse-server)</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">server</span><span class="p">:</span>
+<span class="w">   </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://your_server_IP_address (ex. http://AgentVerse-IM-server)</span>
+<span class="w">   </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7788 (setting 7788 port in your server)</span>
+<span class="w">   </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">your_server_IP_address (ex. AgentVerse-IM-server)</span>
 </pre></div>
 </div>
-
-<div class="section" id="tool_agent">
-<h3>Tool Agent<a class="headerlink" href="#tool_agent" title="Permalink to this heading">#</a></h3>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="tool-agent">
+<h2>Tool Agent<a class="headerlink" href="#tool-agent" title="Link to this heading">#</a></h2>
 <p>是接入AgentVerse的不同agent，可以是ReAct、OpenInterpreter等。tool_agent是optional的，根据实际case所需agent来决定。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">tool_agent: </span> 
-    <span class="kn">agent_type:</span> <span class="s2">ReAct / OpenInterpreter</span>
-    <span class="kn">desc:</span> <span class="s2">your tool agent description</span>
-    <span class="kn">tool_config:</span> <span class="s2">your tools file path</span>
-    <span class="kn">container_name:</span> <span class="s2">docker container name</span>
-    <span class="kn">model:</span> <span class="s2">GPT version (ex. gpt-4-1106)</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">tool_agent</span><span class="p">:</span>
+<span class="w">   </span><span class="nt">agent_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReAct / OpenInterpreter</span>
+<span class="w">   </span><span class="nt">desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">your tool agent description</span>
+<span class="w">   </span><span class="nt">tool_config</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">your tools file path</span>
+<span class="w">   </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker container name</span>
+<span class="w">   </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GPT version (ex. gpt-4-1106)</span>
 </pre></div>
 </div>
-
-<div class="section" id="comm">
-<h3>Comm<a class="headerlink" href="#comm" title="Permalink to this heading">#</a></h3>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="comm">
+<h2>Comm<a class="headerlink" href="#comm" title="Link to this heading">#</a></h2>
 <p>comm: 是communication agent用于跟其他agent进行沟通，同时也会给tool_agent分配任务。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">comm: </span> 
-    <span class="kn">name:</span> <span class="s2">your communication agent name</span>
-    <span class="kn">desc:</span> <span class="s2">your communication agent description</span>
-    <span class="kn">type:</span> <span class="s2">Thing Assistant / Human Assistant</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">comm</span><span class="p">:</span>
+<span class="w">   </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">your communication agent name</span>
+<span class="w">   </span><span class="nt">desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">your communication agent description</span>
+<span class="w">   </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing Assistant / Human Assistant</span>
 </pre></div>
 </div>
-
-<div class="section" id="llm">
-<h3>LLM<a class="headerlink" href="#llm" title="Permalink to this heading">#</a></h3>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="llm">
+<h2>LLM<a class="headerlink" href="#llm" title="Link to this heading">#</a></h2>
 <p>llm: LLM的配置属性。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">llm: </span> 
-    <span class="kn">llm_type:</span> <span class="s2">openai-chat</span>
-    <span class="kn">model:</span> <span class="s2">GPT version (ex. gpt-4-1106)</span>
-    <span class="kn">temperature:</span> <span class="s2">our default value is 0.1, it is optional</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">llm</span><span class="p">:</span>
+<span class="w">   </span><span class="nt">llm_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai-chat</span>
+<span class="w">   </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GPT version (ex. gpt-4-1106)</span>
+<span class="w">   </span><span class="nt">temperature</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">our default value is 0.1, it is optional</span>
 </pre></div>
 </div>
-
-
-
-</div>
-</div>
+</section>
+</section>
 
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../customize/tool.html">
+          <a class="next-page" href="tool.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Tool</div>
+                <div class="title">创建Tool</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -314,7 +310,7 @@
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2024, Team MetaAgentVerse
+                Copyright &#169; 2024, Team AgentVerse-IM
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
@@ -340,17 +336,11 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Agent</a><ul>
+<li><a class="reference internal" href="#">IOA Paper Writing</a><ul>
 <li><a class="reference internal" href="#server">Server</a></li>
-<li><a class="reference internal" href="#tool_agent">Tool Agent</a></li>
+<li><a class="reference internal" href="#tool-agent">Tool Agent</a></li>
 <li><a class="reference internal" href="#comm">Comm</a></li>
 <li><a class="reference internal" href="#llm">LLM</a></li>
-
-
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -362,16 +352,9 @@
       
     </aside>
   </div>
-</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/scripts/furo.js"></script>
-    <script src="../_static/js/mendablesearch.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.3.3/dist/umd/index.js"></script>
-    <script defer="defer" src="../_static/js/algolia.js"></script>
-    <script defer="defer" src="../_static/js/leadfeeder.js"></script>
+</div><script src="../_static/documentation_options.js?v=2ccfc426"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
     </body>
 </html>

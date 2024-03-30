@@ -1,8 +1,3 @@
-.. doc documentation master file, created by
-   sphinx-quickstart on Fri Mar 29 21:39:52 2024.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 欢迎来到 AgentVerse-IM 🪐!
 ==================================
 
@@ -23,53 +18,4 @@ AgentVerse-IM是一个多agent协作的框架，核心思想在于定义通用�
 |
 
 * ⏳ 异步执行能力: 拥有异步执行的能力，允许不同的Agent在执行任务的过程中继续进行交互，而不必一味地等待其他Agent的执行结果。这种设计不仅提高了任务的执行效率，而且增加了处理过程的灵活性。Agent可以在等待必要信息的同时继续执行其他任务，这种非阻塞的工作模式使得整个系统的反应速度更快，处理能力更强，进一步优化了Agent之间的协同工作流程。
-
-
-.. toctree::
-   :maxdepth: 2
-
-   home
-
-.. toctree::
-   :maxdepth: 2
-   :caption: HIGH-LEVEL 概念
-
-   high_level_concepts/framework
-   high_level_concepts/mechanism
-   high_level_concepts/code_structure
-   high_level_concepts/customize_tool_agent
-
-
-.. toctree::
-   :maxdepth: 2
-   :caption: 开始使用
-
-   getting_started/installation
-
-.. toctree::
-   :maxdepth: 2
-   :caption: 运行 CASES
-
-   case/IOA
-   case/IOT_1
-   case/IOT_2
-
-.. toctree::
-   :maxdepth: 2
-   :caption: 自定义AGENT
-
-   customize/agent
-   customize/tool
-   customize/goal
-   customize/docker-compose
-
-.. toctree::
-   :maxdepth: 2
-   :caption: 分布式服务简单配置
-
-
-   distributed_service/config
-   distributed_service/set_server
-   distributed_service/run_case
-
 

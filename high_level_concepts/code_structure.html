@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="本地运行Case" href="run_case.html" /><link rel="prev" title="创建docker-compose" href="config.html" />
+<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="自定义Tool Agent" href="customize_tool_agent.html" /><link rel="prev" title="沟通机制" href="mechanism.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
-        <title>AgentVerse-IM 安装 - AgentVerse-IM 文档</title>
+        <title>代码结构 - AgentVerse-IM 文档</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
@@ -158,11 +158,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../home.html">欢迎来到 AgentVerse-IM 🪐!</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">HIGH-LEVEL 概念</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../high_level_concepts/framework.html">框架理念</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../high_level_concepts/mechanism.html">沟通机制</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../high_level_concepts/code_structure.html">代码结构</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../high_level_concepts/customize_tool_agent.html">自定义Tool Agent</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="framework.html">框架理念</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mechanism.html">沟通机制</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">代码结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="customize_tool_agent.html">自定义Tool Agent</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">开始使用</span></p>
 <ul>
@@ -182,10 +182,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../customize/docker-compose.html">创建docker-compose</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">分布式服务简单配置</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="config.html">创建docker-compose</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">AgentVerse-IM 安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="run_case.html">本地运行Case</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../distributed_service/config.html">创建docker-compose</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributed_service/set_server.html">AgentVerse-IM 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributed_service/run_case.html">本地运行Case</a></li>
 </ul>
 
 </div>
@@ -220,53 +220,74 @@
           </label>
         </div>
         <article role="main">
-          <section id="agentverse-im">
-<h1>AgentVerse-IM 安装<a class="headerlink" href="#agentverse-im" title="Link to this heading">#</a></h1>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<ol class="arabic">
-<li><p>首先进入服务器</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">username</span><span class="nd">@ip_address</span>
-</pre></div>
-</div>
-</li>
-<li><p>创建一个文件夹，将AgentVerse-IM clone到文件中，</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">data</span>
-<span class="n">mkdir</span> <span class="n">your_file_name</span>
-<span class="n">cd</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">your_file_name</span>
-<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">AgentVerse</span><span class="o">/</span><span class="n">AgentVerse</span><span class="o">-</span><span class="n">IM</span><span class="o">.</span><span class="n">git</span>
-</pre></div>
-</div>
-</li>
+          <section id="id1">
+<h1>代码结构<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<ul>
+<li><p><code class="code docutils literal notranslate"><span class="pre">im_client/agents</span></code>: 存放不同tool agent以下是目前支持的Agent。对于如何新接入一个agent，可见自定义Tool Agent的描述。</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><strong>ReAct Agent</strong> : <code class="code docutils literal notranslate"><span class="pre">im_client/agents/react</span></code></p></li>
+<li><p><strong>OpenAI Assistant</strong>: <code class="code docutils literal notranslate"><span class="pre">im_client/agents/openai_assistant</span></code></p></li>
+<li><p><strong>Open Interpreter</strong>: <code class="code docutils literal notranslate"><span class="pre">im_client/agents/open_interpreter</span></code></p></li>
+<li><p><strong>AutoGPT</strong>: <code class="code docutils literal notranslate"><span class="pre">im_client/agents/autogpt</span></code></p></li>
 </ol>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<ol class="arabic" start="3">
-<li><p>拉取IOT case中IOT Server所需要用到的image，</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">mlmz</span><span class="o">/</span><span class="n">iot</span><span class="p">:</span><span class="n">latest</span>
-</pre></div>
-</div>
+</div></blockquote>
 </li>
-</ol>
+</ul>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<ol class="arabic" start="4">
-<li><p>在 <code class="code docutils literal notranslate"><span class="pre">dockerfiles/compose</span></code> 目录下的 <code class="code docutils literal notranslate"><span class="pre">server.yml</span></code> 包含了AgentVerse-IM Server和IOT Server。通过docker-compose命令在服务端启动。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="o">-</span><span class="n">f</span> <span class="n">dockerfiles</span><span class="o">/</span><span class="n">composeserver</span><span class="o">.</span><span class="n">yml</span> <span class="n">up</span> <span class="o">--</span><span class="n">build</span>
-</pre></div>
-</div>
-</li>
-</ol>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">im_client/communication</span></code>: Communication Layer的具体实现。 communication_layer.py、实现了主要逻辑， main.py是启动入口，task_management.py维护当前群聊中所有正在进行/已完成的任务状态（会作为prompt里的内容给到agent里）。</p></li>
+</ul>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">小技巧</p>
-<p>如果需要想要部署其他server，可自行修改server.yml。</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">im_client/server</span></code>: 中心服务器的实现，包括agent registry、session manager等。</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
 </div>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">im_client/config</span></code>: 存储了一些agent的config文件，在docker-compose进行整个系统启动时，会读取docker-compose配置中指定的config，之后会提到。另外，这个文件夹的tools文件夹里存着一些描述tool的yaml。</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">im_client/tools</span></code>: 包含一些工具的具体实现，他们的描述被存在上面说的这个im_client/config/tools里。</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">im_client/llms</span></code>: 目前只实现了openai的接口，也就是communicative agent的LLM暂时只支持openai模型。</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">im_client/memory</span></code>: 目前基本还是只用的最简单的列表memory，就是把所有消息原封不动地存下来。</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">im_client/prompts</span></code>: 存储几乎框架中所有用到的prompt</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">im_client/types</span></code>: 框架中用到的一些数据类型，用pydantic来进行类型标注，比如任务的描述、任务的状态等</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">dockerfiles</span></code>: 存放了所有的dockerfile，用于构建agent的docker镜像和启动整个系统的docker-compose</p></li>
+</ul>
 </section>
 
         </article>
@@ -274,23 +295,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="run_case.html">
+          <a class="next-page" href="customize_tool_agent.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">本地运行Case</div>
+                <div class="title">自定义Tool Agent</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="config.html">
+          <a class="prev-page" href="mechanism.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">创建docker-compose</div>
+                <div class="title">沟通机制</div>
                 
               </div>
             </a>

@@ -1,0 +1,35 @@
+#######################
+IOA Paper Writing
+#######################
+
+|
+
+IOA Paper Writing: 在IOA场景中，有4个agent组队进行沟通协作完成IOA Paper Introduction的写作，这四个agent分别是Weize Chen's Assistant,Chen Qian's Assistant,Cheng Yang's Assistant,ArxivAssistant,其中ArxivAssistant是一个基于ReAct agent的communication layer负责去使用Arxiv相关工具以获得IOA所需相关论文。以下是如何启动并使用。
+
+Docker 运行
+===========================
+* 首先创建ReAct Agent镜像。
+
+   ::
+
+      docker build -f dockerfiles/tool_agents/react.Dockerfile -t react:latest . 
+
+|
+
+* 在 :code:`dockerfiles/compose/.env` 中，写上你的openai的api key，和base_url（如果需要填写）。如果已经设置了系统环境变量，就不需要填写。
+
+|
+
+* 然后通过docker-compose自动创建并运行7个container，其中包含server，weize_frontend，四个参与群聊的agent，以及Arxiv ReAct agent。
+
+   ::
+
+      docker-compose -f dockerfiles/compose/paper_writing.yml up --build
+
+|
+
+* 启动后，在另一个窗口命令行中执行，该文件会发起一个goal
+
+   ::
+
+      python tests/test_paper_writing.py
